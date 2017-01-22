@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-lamdep.master.cs" Inherits="site_lamdep" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="log" runat="Server">
+    <span class="dn">Đăng nhập</span>
+    <br />
+    <span class="dk">Đăng ký</span>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="main-web container">
+        <div class="aside">
+            <section>
+                <h3>Làm đẹp</h3>
+                <asp:ListView ID="lstMakeBeautyCategory" runat="server"
+                    DataSourceID="odsMakeBeautyCategory" EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-ld-" + Eval("ProductCategoryID") + ".aspx" %>'><%# Eval("ProductCategoryName") %></a></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <ul>
+                            <li runat="server" id="itemPlaceholder"></li>
+                        </ul>
+                    </LayoutTemplate>
+                </asp:ListView>
+                <asp:ObjectDataSource ID="odsMakeBeautyCategory" runat="server"
+                    SelectMethod="ProductCategorySelectAll"
+                    TypeName="TLLib.ProductCategory">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="4" Name="parentID" Type="Int32" />
+                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32" />
+                        <asp:Parameter DefaultValue="True" Name="IsShowOnMenu" Type="String" />
+                        <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+            </section>
+        </div>
+        <div class="wrap-main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>
+
+

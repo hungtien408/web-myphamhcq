@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-lamdep.master.cs" Inherits="site_lamdep" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="log" Runat="Server">
+    <span class="dn">Đăng nhập</span>
+    <br />
+    <span class="dk">Đăng ký</span>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="main-web container">
+        <div class="aside">
+            <section>
+                <h3>Làm đẹp</h3>
+                <ul>
+                    <li><a href="#">Cách dưỡng trắng da</a></li>
+                    <li><a href="#">Cách chống nắng hiệu quả</a></li>
+                    <li><a href="#">Chăm sóc da nám</a></li>
+                    <li><a href="#">Điều trị mụn</a></li>
+                    <li><a href="#">Dưỡng da trắng tự nhiên</a></li>
+                    <li><a href="#">Phương pháp giảm cân</a></li>
+                    <li><a href="#">Chăm sóc tóc</a></li>
+                    <li><a href="#">Chăm sóc lông mi - mày</a></li>
+                    <li><a href="#">Chăm sóc ngực</a></li>
+                    <li><a href="#">Trị môi thâm</a></li>
+                    <li><a href="#">Chăm sóc body</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="wrap-main">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>
+
+
